@@ -1,11 +1,11 @@
 :root {
-  --background: #ffffff;
+  --background: #0c0c0b;
   --foreground: #171717;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #0c0c0b;
     --foreground: #ededed;
   }
 }
@@ -38,5 +38,296 @@ a {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+}
+
+.nav-cont {
+  display: flex;
+  padding: 18px 148px;
+  align-items: center;
+  border-bottom: white 1px solid;
+}
+
+.logx {
+  color: #0105ff;
+}
+
+.logo {
+  width: 35%;
+  font-size: 36px;
+}
+
+.butt-cont {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.left-butts {
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+  padding: 22px 92px;
+  border: white 1px solid;
+  border-radius: 15px;
+}
+
+.left-butts a {
+  font-size: 20px;
+}
+
+.right-butts {
+  border: white 1px solid;
+  border-radius: 15px;
+  padding: 16px 100px;
+}
+
+.right-butts a {
+  font-size: 26px;
+}
+
+.left-butts a {
+  display: inline-block;
+  position: relative;
+}
+
+.left-butts a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 3px;
+  bottom: -3;
+  left: 0;
+  background-color: currentColor;
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.left-butts a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* part 2 */
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* Стили для карточки с изображением */
+
+.card {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 630px;
+  height: 366px;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Стили для текста на изображении */
+
+.card-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.card-title {
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  width: 100%;
+  padding: 10px;
+}
+
+.blue-dot {
+  color: #3b82f6;
+}
+
+.card-subtitle {
+  font-size: 30px;
+  font-weight: 600;
+  color: white;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.learn-button {
+  background-color: #261b4c;
+  color: white;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 0.375rem;
+  margin-left: 8px;
+  margin-top: 86px;
+  border: none;
+  width: 25%;
+  cursor: pointer;
+}
+
+.pp {
+  opacity: 80%;
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+.mac-cont {
+  width: 80%;
+  margin-left: 20%;
+  z-index: 10000;
+}
+
+.mac-image {
+  width: 20%;
+  max-width: 700px;
+  max-height: 570px;
+  z-index: 10000;
+}
+
+.hipage {
+  margin-top: 5%;
+  display: flex;
+  align-items: center;
+}
+
+.mac-image {
+  position: static !important;
+}
+
+.background-container {
+  position: absolute;
+  top: 150;
+  left: 70;
+  width: 10%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* Медиа-запросы для адаптивности */
+
+@media (max-width: 768px) {
+  .card {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+.market-stats {
+  display: flex;
+  justify-content: space-between;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .market-stats {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .stat-item {
+    text-align: left;
+  }
+}
+
+.market-ticker {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #00000000;
+  color: #fff;
+  padding: 15px 20px;
+  border: white 1px solid;
+  border-radius: 8px;
+  font-family: 'Arial', sans-serif;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.ticker-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.ticker-label {
+  font-size: 19px;
+  color: #ffffff;
+}
+
+.ticker-value {
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.loading,
+.error {
+  text-align: center;
+  padding: 15px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 8px;
+}
+
+.error {
+  color: #ff6b6b;
+}
+
+.overview-container {
+  padding-top: 200px;
+}
+
+.overview-title {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+/* Адаптивная верстка */
+
+@media (max-width: 768px) {
+  .market-ticker {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .ticker-item {
+    width: 100%;
+    justify-content: space-between;
   }
 }

@@ -1,0 +1,86 @@
+:root {
+  --color-gain: #00c853;
+  --color-loss: #ff3d00;
+}
+
+.market-movers-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+.market-movers-column {
+  flex: 0 0 auto;
+  width: 280px;
+  background-color: #000;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ffffff;
+}
+
+.market-movers-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #ffffff;
+}
+
+.market-movers-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.market-movers-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.market-movers-item:last-child {
+  border-bottom: none;
+}
+
+.coin-symbol {
+  font-weight: 500;
+  color: #fff;
+}
+
+.percent-change {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.market-movers-loading,
+.market-movers-error {
+  text-align: center;
+  padding: 20px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 8px;
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+.market-movers-error {
+  color: var(--color-loss);
+}
+
+/* Адаптивная верстка */
+
+@media (max-width: 768px) {
+  .market-movers-container {
+    flex-direction: column;
+  }
+  .market-movers-column {
+    margin-bottom: 16px;
+  }
+}

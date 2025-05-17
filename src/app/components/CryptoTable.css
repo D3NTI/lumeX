@@ -1,0 +1,154 @@
+.crypto-table-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px auto;
+  background-color: #000;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding-top: 10px;
+}
+
+.crypto-table-tabs {
+  display: flex;
+  background-color: #111;
+  border-radius: 8px 8px 0 0;
+  overflow: hidden;
+  border: 1px solid #333;
+}
+
+.crypto-table-tab {
+  padding: 10px 16px;
+  background: none;
+  border: none;
+  color: #aaa;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.crypto-table-tab:hover {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.crypto-table-tab.active {
+  color: #fff;
+  background-color: #000;
+  border-bottom: 2px solid #fff;
+}
+
+.crypto-table-wrapper {
+  overflow-x: auto;
+}
+
+.crypto-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  color: #fff;
+}
+
+.crypto-table th {
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #888;
+  border-bottom: 1px solid #333;
+  white-space: nowrap;
+}
+
+.crypto-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid #222;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.crypto-table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.star-column {
+  width: 36px;
+  text-align: center;
+}
+
+.favorite-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #666;
+  padding: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.star-filled {
+  color: #ffc107;
+}
+
+.star-outline {
+  color: #666;
+}
+
+.name-column {
+  min-width: 160px;
+}
+
+.crypto-name {
+  font-weight: 500;
+}
+
+.crypto-symbol {
+  color: #888;
+  margin-left: 4px;
+}
+
+.positive-change {
+  color: #00c853;
+}
+
+.negative-change {
+  color: #ff3d00;
+}
+
+.crypto-table-loading,
+.crypto-table-error {
+  text-align: center;
+  padding: 30px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 8px;
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+.crypto-table-error {
+  color: #ff3d00;
+}
+
+/* Адаптивная верстка */
+
+@media (max-width: 1200px) {
+  .crypto-table-container {
+    margin: 20px 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .crypto-table-tabs {
+    flex-wrap: wrap;
+  }
+  .crypto-table-tab {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+  .crypto-table th,
+  .crypto-table td {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+}
