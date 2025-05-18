@@ -1,12 +1,13 @@
 import React from 'react';
 import NavButt from '../components/NavButt';
+import Link from 'next/link';
 export default function NavComp() {
   return (
     <div className="nav-cont">
-      <h1 className="logo">
+      <Link href="/" className="logo">
         Lume
         <span className="logx">X</span>
-      </h1>
+      </Link>
 
       <NavButt></NavButt>
     </div>

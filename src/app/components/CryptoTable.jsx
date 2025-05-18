@@ -1,5 +1,5 @@
 'use client';
-
+import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import './CryptoTable.css';
 
@@ -263,7 +263,14 @@ function CryptoTable() {
 
   // Функция для форматирования цены
   const formatPrice = (price) => {
-    return '₿' + price.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+    if (price >= 1e4)
+      return price.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',') + '$';
+
+    if (price >= 1e1 && price < 1e4)
+      return price.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') + '$';
+    if (price >= 1e-1 && price < 1e1)
+      return price.toFixed(3).replace(/\d(?=(\d{3})+\.)/g, '$&,') + '$';
+    return price.toFixed(6).replace(/\d(?=(\d{3})+\.)/g, '$&,') + '$';
   };
 
   // Функция для переключения избранного
@@ -424,9 +431,15 @@ function CryptoTable() {
                   </button>
                 </td>
                 <td className="name-column">
-                  <span className="crypto-name">
-                    {getCryptoName(crypto.symbol)}
-                  </span>{' '}
+                  <Link
+                    href={`/coin/${crypto.symbol}`}
+                    key={crypto.symbol}
+                    className="coin-card"
+                  >
+                    <span className="crypto-name">
+                      {getCryptoName(crypto.symbol)}
+                    </span>{' '}
+                  </Link>
                   <span className="crypto-symbol">{crypto.symbol}</span>
                 </td>
                 <td>{formatPrice(crypto.price)}</td>

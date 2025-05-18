@@ -1,12 +1,11 @@
 .crypto-table-container {
   width: 100%;
   max-width: 1200px;
-  margin: 20px auto;
+  margin: 30px auto;
   background-color: #000;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding-top: 10px;
 }
 
 .crypto-table-tabs {
@@ -23,7 +22,7 @@
   border: none;
   color: #aaa;
   cursor: pointer;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 500;
   transition: all 0.2s ease;
 }
@@ -52,7 +51,7 @@
 
 .crypto-table th {
   padding: 10px 14px;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 500;
   color: #888;
   border-bottom: 1px solid #333;
@@ -62,7 +61,7 @@
 .crypto-table td {
   padding: 10px 14px;
   border-bottom: 1px solid #222;
-  font-size: 13px;
+  font-size: 16px;
   white-space: nowrap;
 }
 
