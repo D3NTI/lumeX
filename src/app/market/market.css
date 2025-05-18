@@ -1,0 +1,359 @@
+.market-page {
+  background-color: #000000;
+  min-height: 100vh;
+  color: white;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.market-header {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.back-link {
+  color: #aaaaaa;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.back-link:hover {
+  color: #ffffff;
+}
+
+.search-container {
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #000000;
+  border: 1px solid #333333;
+  border-radius: 50px;
+  padding: 10px 20px;
+  width: 100%;
+}
+
+.search-icon {
+  margin-right: 10px;
+  color: #666666;
+}
+
+.search-input {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+  width: 100%;
+  outline: none;
+}
+
+/* Стили для выпадающего списка результатов поиска */
+
+.search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #111111;
+  border: 1px solid #333333;
+  border-radius: 10px;
+  margin-top: 5px;
+  max-height: 400px;
+  overflow-y: auto;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.search-result-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  border-bottom: 1px solid #222222;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.search-result-item:hover {
+  background-color: #1a1a1a;
+}
+
+.search-result-item:last-child {
+  border-bottom: none;
+}
+
+.result-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.result-symbol {
+  font-weight: 500;
+  font-size: 16px;
+  color: white;
+}
+
+.result-pair {
+  font-size: 12px;
+  color: #888888;
+}
+
+.result-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.result-price {
+  font-weight: 500;
+  font-size: 16px;
+  color: white;
+}
+
+.result-change {
+  font-size: 12px;
+}
+
+.result-change.positive {
+  color: #00c853;
+}
+
+.result-change.negative {
+  color: #ff3d00;
+}
+
+.no-results {
+  padding: 20px;
+  text-align: center;
+  color: #888888;
+}
+
+.search-footer {
+  padding: 10px 20px;
+  background-color: #0a0a0a;
+  border-top: 1px solid #222222;
+}
+
+.search-tip {
+  font-size: 12px;
+  color: #666666;
+  text-align: center;
+}
+
+.market-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.section {
+  border: 1px solid #333333;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.section-header {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 50px;
+  border: 1px solid #333333;
+  max-width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.coin-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.coin-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.coin-card {
+  border: 1px solid #333333;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.coin-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.coin-pair {
+  color: #aaaaaa;
+  font-size: 14px;
+}
+
+.coin-price {
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+}
+
+.coin-change {
+  font-size: 14px;
+}
+
+.coin-change.positive {
+  color: #00c853;
+}
+
+.coin-change.negative {
+  color: #ff3d00;
+}
+
+.earn-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.earn-card {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #333333;
+  border-radius: 50px;
+  padding: 10px 20px;
+}
+
+.coin-symbol-market {
+  width: 24px;
+  height: 24px;
+  background-color: #333333;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.coin-name {
+  color: #aaaaaa;
+  font-size: 14px;
+}
+
+.coin-apy {
+  color: #00c853;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Состояние загрузки */
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+}
+
+.loading-spinner {
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  border-top: 4px solid #4a4af7;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-text {
+  color: #aaaaaa;
+  font-size: 16px;
+}
+
+/* Состояние ошибки */
+
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+}
+
+.error-message {
+  color: #ff3d00;
+  font-size: 16px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.retry-button {
+  background-color: #4a4af7;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.retry-button:hover {
+  background-color: #5a5aff;
+}
+
+/* Стили для скроллбара в выпадающем списке */
+
+.search-results::-webkit-scrollbar {
+  width: 8px;
+}
+
+.search-results::-webkit-scrollbar-track {
+  background: #111111;
+  border-radius: 10px;
+}
+
+.search-results::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 10px;
+}
+
+.search-results::-webkit-scrollbar-thumb:hover {
+  background: #444444;
+}
+
+@media (max-width: 768px) {
+  .coin-grid {
+    flex-direction: column;
+  }
+  .earn-grid {
+    flex-direction: column;
+  }
+  .earn-card {
+    padding: 15px;
+  }
+}
