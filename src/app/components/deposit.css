@@ -1,0 +1,521 @@
+/* Deposit Modal Styles */
+.deposit-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+.deposit-modal {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  margin: 20px;
+  border: 1px solid #333;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  animation: slideUp 0.3s ease-out;
+  overflow-y: auto;
+}
+
+.deposit-header {
+  padding: 24px 24px 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #333;
+  margin-bottom: 24px;
+}
+
+.deposit-header h2 {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: #999;
+  font-size: 28px;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.close-btn:hover {
+  background: #333;
+  color: #fff;
+}
+
+.deposit-content {
+  padding: 0 24px 24px;
+}
+
+.deposit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-section h3 {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Currency Selection */
+.currency-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.currency-option {
+  cursor: pointer;
+}
+
+.currency-option input {
+  display: none;
+}
+
+.currency-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: #000;
+  border: 2px solid #333;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.currency-option input:checked + .currency-card {
+  border-color: #0105ff;
+  background: rgba(1, 5, 255, 0.1);
+}
+
+.currency-card:hover {
+  border-color: #555;
+}
+
+.currency-icon {
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #333;
+  border-radius: 50%;
+}
+
+.currency-info {
+  flex: 1;
+}
+
+.currency-symbol {
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.currency-name {
+  color: #999;
+  font-size: 14px;
+}
+
+/* Amount Input */
+.amount-input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.amount-input {
+  width: 100%;
+  padding: 16px 80px 16px 16px;
+  background: #000;
+  border: 2px solid #333;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.amount-input:focus {
+  outline: none;
+  border-color: #0105ff;
+}
+
+.currency-label {
+  position: absolute;
+  right: 16px;
+  color: #999;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.amount-info {
+  color: #999;
+  font-size: 14px;
+}
+
+.quick-amounts {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.quick-amounts button {
+  padding: 8px 16px;
+  background: #333;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.quick-amounts button:hover {
+  background: #0105ff;
+}
+
+/* Payment Methods */
+.method-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.method-option {
+  cursor: pointer;
+}
+
+.method-option input {
+  display: none;
+}
+
+.method-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background: #000;
+  border: 2px solid #333;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.method-option input:checked + .method-card {
+  border-color: #0105ff;
+  background: rgba(1, 5, 255, 0.1);
+}
+
+.method-card:hover {
+  border-color: #555;
+}
+
+.method-icon {
+  font-size: 24px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #333;
+  border-radius: 12px;
+}
+
+.method-info {
+  flex: 1;
+}
+
+.method-name {
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.method-details {
+  color: #999;
+  font-size: 14px;
+}
+
+.continue-btn {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #0105ff 0%, #4a4af7 100%);
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.continue-btn:hover {
+  background: linear-gradient(135deg, #0004e6 0%, #3d3de6 100%);
+  transform: translateY(-1px);
+}
+
+/* Confirmation Step */
+.confirmation-step {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.confirmation-details {
+  background: #000;
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid #333;
+}
+
+.confirmation-details h3 {
+  color: #fff;
+  margin-bottom: 16px;
+  font-size: 18px;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #333;
+}
+
+.summary-item:last-child {
+  border-bottom: none;
+}
+
+.summary-item.total {
+  font-weight: 600;
+  font-size: 18px;
+  color: #0105ff;
+}
+
+.summary-item span:first-child {
+  color: #999;
+}
+
+.summary-item span:last-child {
+  color: #fff;
+}
+
+.demo-notice {
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+  background: rgba(255, 193, 7, 0.1);
+  border: 1px solid #ffc107;
+  border-radius: 12px;
+  color: #ffc107;
+}
+
+.demo-icon {
+  font-size: 24px;
+}
+
+.demo-notice strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.confirmation-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.back-btn {
+  flex: 1;
+  padding: 16px;
+  background: #333;
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.back-btn:hover {
+  background: #555;
+}
+
+.confirm-btn {
+  flex: 2;
+  padding: 16px;
+  background: linear-gradient(135deg, #0105ff 0%, #4a4af7 100%);
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.confirm-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #0004e6 0%, #3d3de6 100%);
+}
+
+.confirm-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Success Step */
+.success-step {
+  text-align: center;
+  padding: 20px;
+}
+
+.success-icon {
+  font-size: 64px;
+  margin-bottom: 16px;
+}
+
+.success-step h3 {
+  color: #fff;
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.success-step p {
+  color: #999;
+  margin-bottom: 24px;
+  font-size: 16px;
+}
+
+.success-details {
+  background: #000;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 24px;
+  border: 1px solid #333;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #333;
+}
+
+.detail-item:last-child {
+  border-bottom: none;
+}
+
+.detail-item span:first-child {
+  color: #999;
+}
+
+.detail-item span:last-child {
+  color: #fff;
+}
+
+.status-confirmed {
+  color: #28a745;
+  font-weight: 600;
+}
+
+.done-btn {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.done-btn:hover {
+  background: linear-gradient(135deg, #218838 0%, #1e7e34 100%);
+}
+
+/* Wallet Balance Actions */
+.balance-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.deposit-btn,
+.send-btn {
+  flex: 1;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.deposit-btn {
+  background: #28a745;
+  color: white;
+}
+
+.deposit-btn:hover {
+  background: #218838;
+}
+
+.send-btn {
+  background: #0105ff;
+  color: white;
+}
+
+.send-btn:hover {
+  background: #0004e6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .deposit-modal {
+    margin: 10px;
+    max-height: 95vh;
+  }
+
+  .currency-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .confirmation-actions {
+    flex-direction: column;
+  }
+
+  .balance-actions {
+    flex-direction: column;
+  }
+}
