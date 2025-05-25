@@ -1,0 +1,100 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  username  String   @unique
+  password  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Связи
+  wallets      Wallet[]
+  transactions Transaction[]
+
+  @@map("users")
+}
+
+model Wallet {
+  id        String   @id @default(cuid())
+  userId    String
+  symbol    String   // BTC, ETH, USDT и т.д.
+  balance   Decimal  @default(0) @db.Decimal(20, 8)
+  address   String   @unique // Адрес кошелька
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Связи
+  user                User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  sentTransactions    Transaction[] @relation("SenderWallet")
+  receivedTransactions Transaction[] @relation("ReceiverWallet")
+
+  @@unique([userId, symbol])
+  @@map("wallets")
+}
+
+model Transaction {
+  id              String            @id @default(cuid())
+  userId          String
+  senderWalletId  String?
+  receiverWalletId String?
+  type            TransactionType
+  symbol          String            // Криптовалюта
+  amount          Decimal           @db.Decimal(20, 8)
+  fee             Decimal           @default(0) @db.Decimal(20, 8)
+  status          TransactionStatus @default(PENDING)
+  txHash          String?           @unique // Хэш транзакции в блокчейне
+  fromAddress     String?
+  toAddress       String?
+  description     String?
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+
+  // Связи
+  user           User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  senderWallet   Wallet? @relation("SenderWallet", fields: [senderWalletId], references: [id])
+  receiverWallet Wallet? @relation("ReceiverWallet", fields: [receiverWalletId], references: [id])
+
+  @@map("transactions")
+}
+
+model CryptoCurrency {
+  id          String  @id @default(cuid())
+  symbol      String  @unique
+  name        String
+  icon        String?
+  decimals    Int     @default(8)
+  isActive    Boolean @default(true)
+  networkFee  Decimal @default(0) @db.Decimal(20, 8)
+  minWithdraw Decimal @default(0) @db.Decimal(20, 8)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("cryptocurrencies")
+}
+
+enum TransactionType {
+  DEPOSIT
+  WITHDRAW
+  TRANSFER
+  TRADE
+  STAKING_REWARD
+  REFERRAL_BONUS
+}
+
+enum TransactionStatus {
+  PENDING
+  CONFIRMED
+  FAILED
+  CANCELLED
+}
