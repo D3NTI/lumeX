@@ -116,7 +116,7 @@ function CryptoTable() {
           'BTC',
           'ETH',
           'BNB',
-          'SOL',
+          'SOLSOSIHUI',
           'XRP',
           'ADA',
           'AVAX',

@@ -7,7 +7,7 @@ import Footer from './components/Footer';
 export default function Home() {
   return (
     <>
-      <NavComp></NavComp>
+      {/* <NavComp></NavComp> */}
       <HiPage></HiPage>
       <Overview></Overview>
       <MarketMovers></MarketMovers>

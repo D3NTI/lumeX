@@ -79,6 +79,7 @@
 @media (max-width: 768px) {
   .market-movers-container {
     flex-direction: column;
+    align-items: center;
   }
   .market-movers-column {
     margin-bottom: 16px;

@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import './market.css';
-import NavComp from '../components/NavComp';
+
 import Footer from '../components/Footer';
 
 export default function MarketPage() {
@@ -217,7 +217,6 @@ export default function MarketPage() {
 
   return (
     <div className="market-main">
-      <NavComp></NavComp>{' '}
       <div className="market-page">
         <div className="market-header">
           <Link href="/" className="back-link">
