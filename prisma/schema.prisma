@@ -8,7 +8,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url      = "postgresql://postgres:admin1977@lumex.cxq0mkcs0yfk.eu-north-1.rds.amazonaws.com:5432/lumex?schema=public"
 }
 
 model User {
